@@ -13,6 +13,8 @@ TEXT = (
 )
 
 def main() -> None:
+    # The text is 198 Unicode code points, within the 1-280 limit.
+    assert 1 <= len(TEXT) <= 280
     out = Path("/output/entry.txt")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(TEXT, encoding="utf-8")
